@@ -1,0 +1,3 @@
+<p *ngIf="guitar=='Les Paul'">guitar-list works!: here is some state: {{guitar}}</p>
+<button (click)="handleClick()">Click Me</button>
+<app-guiter-list-item [message]="'hei'" (childEvent)="handleChildEvent($event)"></app-guiter-list-item>
