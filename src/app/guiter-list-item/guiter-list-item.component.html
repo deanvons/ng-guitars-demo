@@ -1,3 +1,4 @@
-<p>guiter-list-item works!</p>
-<p>Got a message from parrent: {{message}}</p>
+<p *ngIf="">guiter-list-item works!</p>
+<p>Got a message from parrent: {{show}}</p>
 <button (click)="sendMessageBack()">Call Parent</button>
+<p *ngFor="let guitar of guitars">{{guitar}}</p>

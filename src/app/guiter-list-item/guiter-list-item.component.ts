@@ -5,17 +5,18 @@ import { Component, EventEmitter, Input, input, Output } from '@angular/core';
   selector: 'app-guiter-list-item',
   imports: [CommonModule],
   templateUrl: './guiter-list-item.component.html',
-  styleUrl: './guiter-list-item.component.css'
+  styleUrl: './guiter-list-item.component.css',
 })
 export class GuiterListItemComponent {
+  guitars: string[] = ['Les Paul', 'Strat', 'Telecaster'];
 
-@Input() message?:string
+  show: boolean = false;
 
-@Output() childEvent: EventEmitter<string> = new EventEmitter()
+  @Input() message?: string;
+  
+  @Output() childEvent: EventEmitter<string> = new EventEmitter();
 
-
-sendMessageBack(){
-  this.childEvent.emit('hi mom')
-}
-
+  sendMessageBack() {
+    this.childEvent.emit('hi mom');
+  }
 }
