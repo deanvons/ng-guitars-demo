@@ -20,13 +20,15 @@ export class GuitarListComponent implements OnInit {
     this._guitarService = guitarService;
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   canRender = true;
 
   handleClick() {
-    this._guitarService?.fetchGuitars()
+    this._guitarService?.fetchGuitars()?.subscribe({
+      next: (guitars) => console.log(guitars), // basically .then
+      error: (error) => console.error(error), // basically .catch
+    });
   }
 
   handleChildEvent(message: string) {

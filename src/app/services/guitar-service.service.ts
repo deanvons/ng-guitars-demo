@@ -11,11 +11,8 @@ export class GuitarServiceService {
   }
 
   someGuitarState:string = "im shared"
-
-  // useSelector get 
-
-  //dispatch set
  
+  // if data from an http needs to be used by a component only then return the get call
   fetchGuitars() {
     return this._http
       ?.get('https://thoughtful-vagabond-fibre.glitch.me/guitars')
