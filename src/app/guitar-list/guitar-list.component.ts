@@ -21,7 +21,6 @@ export class GuitarListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    alert('GuitarListComponent loaded');
   }
 
   canRender = true;
