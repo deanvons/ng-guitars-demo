@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, input, Output } from '@angular/core';
+import { Guitar } from '../models/guitar.model';
 
 @Component({
   selector: 'app-guiter-list-item',
@@ -8,11 +9,9 @@ import { Component, EventEmitter, Input, input, Output } from '@angular/core';
   styleUrl: './guiter-list-item.component.css',
 })
 export class GuiterListItemComponent {
-  guitars: string[] = ['Les Paul', 'Strat', 'Telecaster'];
+ 
 
-  show: boolean = false;
-
-  @Input() message?: string;
+  @Input() guitar?: Guitar;
   
   @Output() childEvent: EventEmitter<string> = new EventEmitter();
 

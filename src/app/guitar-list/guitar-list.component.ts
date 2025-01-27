@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { GuiterListItemComponent } from '../guiter-list-item/guiter-list-item.component';
 import { GuitarServiceService } from '../services/guitar-service.service';
+import { Guitar } from '../models/guitar.model';
 
 @Component({
   selector: 'app-guitar-list',
@@ -11,16 +12,23 @@ import { GuitarServiceService } from '../services/guitar-service.service';
 })
 export class GuitarListComponent implements OnInit {
   // public by default
-  guitar: string = 'Les Paul';
-  private costPrice: number = 5699;
+  guitars:Guitar[] = []
 
   private readonly _guitarService?: GuitarServiceService;
+
 
   constructor(guitarService: GuitarServiceService) {
     this._guitarService = guitarService;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._guitarService?.fetchGuitars()?.subscribe({
+      next: (guitarData:Guitar[]) => this.guitars = guitarData, // basically .then
+      error: (error) => console.error(error), // basically .catch
+    });
+
+
+  }
 
   canRender = true;
 

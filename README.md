@@ -1,5 +1,6 @@
 [ ] - services
-[ ] - DI
 [ ] - state
-[ ] - routing
-[ ] - guards
+[ ] - rxjs
+[x] - DI
+[x] - routing
+[x] - guards

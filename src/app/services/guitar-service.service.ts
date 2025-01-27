@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Guitar } from '../models/guitar.model';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,7 @@ export class GuitarServiceService {
   // if data from an http needs to be used by a component only then return the get call
   fetchGuitars() {
     return this._http
-      ?.get('https://thoughtful-vagabond-fibre.glitch.me/guitars')
+      ?.get<Guitar[]>('https://thoughtful-vagabond-fibre.glitch.me/guitars')
       
   }
 }

@@ -1,4 +1,2 @@
-<p *ngIf="">guiter-list-item works!</p>
-<p>Got a message from parrent: {{show}}</p>
-<button (click)="sendMessageBack()">Call Parent</button>
-<p *ngFor="let guitar of guitars">{{guitar}}</p>
+<img [src]="guitar?.image" [alt]="guitar?.model" class="w-64"/>
+<button (click)="sendMessageBack()">See Details</button>

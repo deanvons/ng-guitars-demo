@@ -1,3 +1,2 @@
-<p *ngIf="guitar=='Les Paul'">guitar-list works!: here is some state: {{guitar}}</p>
-<button (click)="handleClick()">Click Me to get guitar data</button>
-<app-guiter-list-item [message]="'hei'" (childEvent)="handleChildEvent($event)"></app-guiter-list-item>
+
+<app-guiter-list-item *ngFor="let guitar of guitars" [guitar]="guitar" (childEvent)="handleChildEvent($event)"></app-guiter-list-item>
