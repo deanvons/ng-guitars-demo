@@ -1,2 +1,9 @@
-
-<app-guiter-list-item *ngFor="let guitar of guitars" [guitar]="guitar" (childEvent)="handleChildEvent($event)"></app-guiter-list-item>
+<section class="bg-blue-400">
+  <h2 *ngIf="user != undefined">Welcome: {{ user.username }}</h2>
+  <button (click)="toProfile()">Go to profile</button>
+</section>
+<app-guiter-list-item
+  *ngFor="let guitar of guitars"
+  [guitar]="guitar"
+  (childEvent)="handleChildEvent($event)"
+></app-guiter-list-item>

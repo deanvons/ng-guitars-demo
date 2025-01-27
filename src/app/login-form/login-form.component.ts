@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { User } from '../models/user.model';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login-form',
@@ -12,7 +13,7 @@ import { User } from '../models/user.model';
 })
 export class LoginFormComponent {
 
-  constructor(private readonly router:Router,private readonly loginService:LoginService){
+  constructor(private readonly router:Router,private readonly loginService:LoginService,private readonly userService:UserService){
 
   }
 
@@ -28,6 +29,8 @@ export class LoginFormComponent {
         next: (user: User) => {
           //this.userService.user = user;
           localStorage.setItem('username',username)
+          // sets user state
+          this.userService.user = user
           this.router.navigateByUrl('/guitars')
         },
         error: () => {
