@@ -15,27 +15,28 @@ import { Router } from '@angular/router';
 })
 export class GuitarListComponent implements OnInit {
   // public by default
-  guitars:Guitar[] = []
+  guitars: Guitar[] = [];
 
   // this is the older longer way of DI
   private readonly _guitarService?: GuitarServiceService;
   private readonly _userService?: UserService;
   private readonly _router?: Router;
 
-
-  constructor(guitarService: GuitarServiceService, userService:UserService,router:Router) {
+  constructor(
+    guitarService: GuitarServiceService,
+    userService: UserService,
+    router: Router
+  ) {
     this._guitarService = guitarService;
-    this._userService = userService
-    this._router = router
+    this._userService = userService;
+    this._router = router;
   }
 
   ngOnInit(): void {
     this._guitarService?.fetchGuitars()?.subscribe({
-      next: (guitarData:Guitar[]) => this.guitars = guitarData, // basically .then
+      next: (guitarData: Guitar[]) => (this.guitars = guitarData), // basically .then
       error: (error) => console.error(error), // basically .catch
     });
-
-
   }
 
   // getter for user state -> creates a local reference called user which can be used in the template
@@ -52,11 +53,12 @@ export class GuitarListComponent implements OnInit {
     });
   }
 
-  toProfile(){
-this._router?.navigateByUrl('/profile')
+  toProfile() {
+    this._router?.navigateByUrl('/profile');
   }
 
-  handleChildEvent(message: string) {
-    alert('I was clicked' + message);
+  handleChildEvent(guitarId: string) {
+    this._router?.navigate(['/guitars', guitarId]); // Navigates to /user/123?role=admin
+
   }
 }

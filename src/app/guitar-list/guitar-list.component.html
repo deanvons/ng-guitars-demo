@@ -1,6 +1,6 @@
 <section class="bg-blue-400">
   <h2 *ngIf="user != undefined">Welcome: {{ user.username }}</h2>
-  <button (click)="toProfile()">Go to profile</button>
+  <button (click)="toProfile()" class="hover:cursor-pointer">Go to profile</button>
 </section>
 <app-guiter-list-item
   *ngFor="let guitar of guitars"

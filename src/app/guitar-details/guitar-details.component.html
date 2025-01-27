@@ -1,0 +1,10 @@
+<div class="m-14">
+  <h2 class="text-3xl">{{ guitar?.model }}</h2>
+  <img [src]="guitar?.image" [alt]="guitar?.model" class="w-[58rem] m-1.5" />
+  <h3>Materials</h3>
+  <ul class="list-disc">
+    <li>{{ guitar?.materials?.body }}</li>
+    <li>{{ guitar?.materials?.fretboard }}</li>
+    <li>{{ guitar?.materials?.neck }}</li>
+  </ul>
+</div>

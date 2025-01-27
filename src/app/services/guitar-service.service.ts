@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, Signal } from '@angular/core';
 import { Guitar } from '../models/guitar.model';
 
 @Injectable({
@@ -17,6 +17,12 @@ export class GuitarServiceService {
   fetchGuitars() {
     return this._http
       ?.get<Guitar[]>('https://thoughtful-vagabond-fibre.glitch.me/guitars')
+      
+  }
+
+  getGuitarById(guitarId:string) {
+    return this._http
+      ?.get<Guitar[]>(`https://thoughtful-vagabond-fibre.glitch.me/guitars/?id=${guitarId}`)
       
   }
 }

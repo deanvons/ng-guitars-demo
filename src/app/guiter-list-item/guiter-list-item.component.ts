@@ -16,6 +16,6 @@ export class GuiterListItemComponent {
   @Output() childEvent: EventEmitter<string> = new EventEmitter();
 
   sendMessageBack() {
-    this.childEvent.emit('hi mom');
+    this.childEvent.emit(this.guitar?.id);
   }
 }
