@@ -1,0 +1,8 @@
+{
+  "realm": "keycloak-workshop",
+  "auth-server-url": "https://lemur-7.cloud-iam.com/auth",
+  "ssl-required": "external",
+  "resource": "ng-guitars",
+  "public-client": true,
+  "confidential-port": 0
+}

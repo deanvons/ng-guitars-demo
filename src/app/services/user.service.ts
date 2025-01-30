@@ -13,9 +13,11 @@ export class UserService {
     return this._user;
   }
 
-  set user(user: User | undefined) {
-    this._user = user;
+  set user(value: User) {
+    this._user = value;
   }
+
+ 
 
   constructor() {
   }

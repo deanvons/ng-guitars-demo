@@ -19,7 +19,7 @@ export class GuitarListComponent implements OnInit {
 
   // this is the older longer way of DI
   private readonly _guitarService?: GuitarServiceService;
-  private readonly _userService?: UserService;
+  private readonly _userService: UserService;
   private readonly _router?: Router;
 
   constructor(
@@ -42,6 +42,10 @@ export class GuitarListComponent implements OnInit {
   // getter for user state -> creates a local reference called user which can be used in the template
   get user(): User | undefined {
     return this._userService?.user;
+  }
+
+  updateUsername(){
+    this._userService.user = {...this._userService.user,username: "newUser"} as User
   }
 
   canRender = true;

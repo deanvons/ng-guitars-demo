@@ -7,7 +7,7 @@ import { GuitarDetailsPageComponent } from './pages/guitar-details-page/guitar-d
 
 export const routes: Routes = [
     {path:'',component:LoginPageComponent},
-    {path:'guitars',component:GuitarsPageComponent,canActivate:[authGuard]},
-    {path:'profile',component:ProfilePageComponent,canActivate:[authGuard]},
-    {path:'guitars/:id',component:GuitarDetailsPageComponent,canActivate:[authGuard]}
+    {path:'guitars',component:GuitarsPageComponent},
+    {path:'profile',component:ProfilePageComponent},
+    {path:'guitars/:id',component:GuitarDetailsPageComponent}
 ];
